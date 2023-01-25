@@ -26,7 +26,7 @@ namespace Game.Systems
             {
                 ref var playerInputComponent = ref _inputPool.Get(entity);
 
-                playerInputComponent.MoveInput = 
+                playerInputComponent.MoveInput =
                     new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
                 playerInputComponent.ViewDirectionInput =
                     _camera.ScreenToWorldPoint(new Vector3(

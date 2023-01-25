@@ -1,16 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 using Game.Components;
 using Game.Data;
 using Game.Helpers;
 using Game.Interfaces;
-using Game.MonoBehaviours;
 using Leopotam.EcsLite;
 using UnityEngine;
-using UnityEngine.Rendering.VirtualTexturing;
 
 namespace Game.Strategies
 {

@@ -57,7 +57,7 @@ namespace Game.Strategies
             foreach (var entity in filter)
             {
                 var inputComponent = _playerInputPool.Get(entity);
-                
+
                 var direction = inputComponent.ViewDirectionInput;
                 var position = (Vector2)_player.transform.position;
 

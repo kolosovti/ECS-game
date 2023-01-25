@@ -3,9 +3,7 @@ using Leopotam.EcsLite;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Pool;
 
 namespace Game.Helpers
 {
@@ -23,7 +21,7 @@ namespace Game.Helpers
             _factory = factory;
             _pool = new List<GameObject>(initialSize);
 
-            for (int i = 0; i < initialSize; i++)
+            for (var i = 0; i < initialSize; i++)
             {
                 var obj = _factory.Create();
                 _pool.Add(obj);

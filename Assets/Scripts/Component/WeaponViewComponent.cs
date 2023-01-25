@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using Game.MonoBehaviours;
 using UnityEngine;
+using Game.MonoBehaviours;
 
 namespace Game.Components
 {

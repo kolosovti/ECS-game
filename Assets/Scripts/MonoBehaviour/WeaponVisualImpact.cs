@@ -8,7 +8,7 @@ namespace Game.MonoBehaviours
     public class WeaponVisualImpact : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer _spriteRenderer;
-        [SerializeField] private float ShowTime = 0.5f;
+        [SerializeField] private readonly float ShowTime = 0.5f;
 
         public Action<GameObject> ImpactCompleteCallback;
 

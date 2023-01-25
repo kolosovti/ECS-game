@@ -1,12 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using Game.Components;
-using Game.MonoBehaviours;
 using Leopotam.EcsLite;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 namespace Game.Systems
 {

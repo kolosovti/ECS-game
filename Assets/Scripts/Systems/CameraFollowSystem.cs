@@ -23,7 +23,8 @@ namespace Game.Systems
             if (_camera != null)
             {
                 ref var player = ref _playerPool.Get(0);
-                _camera.transform.position = new Vector3(player.PlayerTransform.position.x, player.PlayerTransform.position.y, _camera.transform.position.z);
+                _camera.transform.position = new Vector3(player.PlayerTransform.position.x,
+                    player.PlayerTransform.position.y, _camera.transform.position.z);
             }
         }
     }

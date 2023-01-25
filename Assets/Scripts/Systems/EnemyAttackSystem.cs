@@ -2,11 +2,8 @@ using Leopotam.EcsLite;
 using System.Collections;
 using System.Collections.Generic;
 using Game.Components;
-using Game.Interfaces;
 using Game.MonoBehaviours;
-using Game.Strategies;
 using UnityEngine;
-using UnityEngine.Rendering.VirtualTexturing;
 
 namespace Game.Systems
 {

@@ -10,9 +10,9 @@ namespace Game.MonoBehaviours
     public class MonoProvider : MonoBehaviour
     {
         public List<EnemyData> EnemiesData;
-        public List<WeaponData> WeaponsData;
-        public PlayerData PlayerData;
         public Camera MainCamera;
+        public PlayerData PlayerData;
         public GameObject ReloadSceneView;
+        public List<WeaponData> WeaponsData;
     }
 }

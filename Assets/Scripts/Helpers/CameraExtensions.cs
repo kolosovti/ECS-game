@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 namespace Game.Helpers
 {
@@ -19,7 +20,7 @@ namespace Game.Helpers
         public static Vector2 GetRandomPositionOnTheBounds(Camera camera)
         {
             var cameraBounds = GetCameraBounds(camera);
-            var rand = new System.Random();
+            var rand = new Random();
 
             var randomizeX = rand.Next() > int.MaxValue / 2;
             if (randomizeX)

@@ -1,7 +1,5 @@
 using System.Collections.Generic;
 using Game.Components;
-using Game.Data;
-using Game.Helpers;
 using Game.Interfaces;
 using Game.MonoBehaviours;
 using Game.Strategies;

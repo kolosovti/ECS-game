@@ -8,11 +8,12 @@ namespace Game.MonoBehaviours
 {
     public class EcsStartup : MonoBehaviour
     {
+        [SerializeField] private MonoProvider _monoProvider;
+
         private EcsWorld _world;
         private IEcsSystems _initSystems;
         private IEcsSystems _updateSystems;
         private IEcsSystems _fixedUpdateSystems;
-        [SerializeField] private MonoProvider _monoProvider;
 
         private void Start()
         {

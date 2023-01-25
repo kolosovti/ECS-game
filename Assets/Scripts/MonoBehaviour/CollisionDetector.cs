@@ -11,7 +11,7 @@ namespace Game.MonoBehaviours
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            CollisionEnterCallback?.Invoke(collision, this.transform);
+            CollisionEnterCallback?.Invoke(collision, transform);
         }
     }
 }

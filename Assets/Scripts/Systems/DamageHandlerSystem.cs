@@ -36,6 +36,7 @@ namespace Game.Systems
                         healthComponent.Health = 0;
                     }
                 }
+
                 _damagedPool.Del(entity);
             }
         }
