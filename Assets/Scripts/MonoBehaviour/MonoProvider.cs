@@ -11,6 +11,7 @@ namespace Game.MonoBehaviours
     {
         public List<EnemyData> EnemiesData;
         public List<WeaponData> WeaponsData;
+        public PlayerData PlayerData;
         public Camera MainCamera;
         public GameObject ReloadSceneView;
     }

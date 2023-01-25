@@ -28,6 +28,11 @@ namespace Game.Systems
                     _deathPool.Add(entity);
                     _healthPool.Del(entity);
                 }
+
+                if (systems.GetWorld().GetPool<PlayerComponent>().Has(entity))
+                {
+                    Debug.Log("Player hp: " + _healthPool.Get(entity).Health);
+                }
             }
         }
     }

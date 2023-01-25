@@ -9,12 +9,10 @@ namespace Game.Systems
 {
     public class PlayerDeathSystem : IEcsInitSystem, IEcsRunSystem
     {
-        private EcsPool<DeathComponent> _deathPool;
         private EcsPool<PlayerComponent> _playerPool;
 
         public void Init(IEcsSystems systems)
         {
-            _deathPool = systems.GetWorld().GetPool<DeathComponent>();
             _playerPool = systems.GetWorld().GetPool<PlayerComponent>();
         }
 
