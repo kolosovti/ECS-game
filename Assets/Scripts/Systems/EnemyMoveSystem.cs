@@ -6,22 +6,31 @@ using UnityEngine;
 
 namespace Game.Systems
 {
-    public class EnemyMoveSystem : IEcsRunSystem
+    public class EnemyMoveSystem : IEcsInitSystem, IEcsRunSystem
     {
+        private EcsPool<ChaseComponent> _chasePool;
+        private EcsPool<MovableComponent> _movablePool;
+
+        public void Init(IEcsSystems systems)
+        {
+            _movablePool = systems.GetWorld().GetPool<MovableComponent>();
+            _chasePool = systems.GetWorld().GetPool<ChaseComponent>();
+        }
+
         public void Run(IEcsSystems systems)
         {
             var filter = systems.GetWorld().Filter<MovableComponent>().Inc<ChaseComponent>().End();
-            var movablePool = systems.GetWorld().GetPool<MovableComponent>();
-            var chasePool = systems.GetWorld().GetPool<ChaseComponent>();
 
             foreach (var entity in filter)
             {
-                ref var movableComponent = ref movablePool.Get(entity);
-                ref var chaseComponent = ref chasePool.Get(entity);
+                ref var movableComponent = ref _movablePool.Get(entity);
+                ref var chaseComponent = ref _chasePool.Get(entity);
 
                 if (chaseComponent.Target != null)
                 {
-                    movableComponent.Rigidbody.velocity = (chaseComponent.Target.transform.position - movableComponent.Rigidbody.transform.position).normalized * movableComponent.EntitySpeed;
+                    movableComponent.Rigidbody.velocity =
+                        (chaseComponent.Target.transform.position - movableComponent.Rigidbody.transform.position)
+                        .normalized * movableComponent.EntitySpeed;
                 }
             }
         }

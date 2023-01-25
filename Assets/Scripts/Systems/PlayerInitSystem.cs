@@ -10,21 +10,22 @@ namespace Game.Systems
     {
         public void Init(IEcsSystems systems)
         {
-            var ecsWorld = systems.GetWorld();
-            var playerEntity = ecsWorld.NewEntity();
+            var world = systems.GetWorld();
+            var playerEntity = world.NewEntity();
 
-            var movablePool = ecsWorld.GetPool<MovableComponent>();
+            var movablePool = world.GetPool<MovableComponent>();
             movablePool.Add(playerEntity);
             ref var movableComponent = ref movablePool.Get(playerEntity);
 
-            var playerInputPool = ecsWorld.GetPool<PlayerInputComponent>();
+            var playerInputPool = world.GetPool<PlayerInputComponent>();
             playerInputPool.Add(playerEntity);
             ref var playerInputComponent = ref playerInputPool.Get(playerEntity);
 
-            var playerPool = ecsWorld.GetPool<PlayerComponent>();
+            var playerPool = world.GetPool<PlayerComponent>();
             playerPool.Add(playerEntity);
             ref var playerComponent = ref playerPool.Get(playerEntity);
 
+            //TODO: переделать на спавн из ScriptableObject конфига, добавить пул объектов
             var playerGO = GameObject.FindGameObjectWithTag("Player");
             movableComponent.EntitySpeed = 10f; // gameData.configuration.playerSpeed;
             movableComponent.Rigidbody = playerGO.GetComponent<Rigidbody2D>();
