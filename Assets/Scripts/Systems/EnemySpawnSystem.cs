@@ -36,7 +36,7 @@ namespace Game.Systems
 
             var chaseFilter = systems.GetWorld().Filter<ChaseComponent>().End();
             //TODO: вынести константу в глобальные переменные
-            while (chaseFilter.GetEntitiesCount() < 10)
+            while (chaseFilter.GetEntitiesCount() < 100)
             {
                 _spawnCount++;
                 GetNextStrategy().Spawn();
